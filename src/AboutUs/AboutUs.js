@@ -8,7 +8,7 @@ const aboutUs = () => {
 		marginTop: "100px"
 	};
 	return (
-		<Container className="mb-5 txtali-l">
+		<Container id="about-us" className="mb-5 txtali-l">
 			<Row>
 				<Col md={{ span: 6 }}>
 					<img

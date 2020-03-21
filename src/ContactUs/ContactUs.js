@@ -7,12 +7,18 @@ import Button from "react-bootstrap/Button";
 
 const ContactUs = () => {
 	return (
-		<Container className="mb-5 txtali-l">
+		<Container id="contact-us" className="mb-5 txtali-l">
 			<Row>
-				<Col md={{ span: 3, offset: 1 }}>
-					<p>Image</p>
+				<Col md={{ span: 4 }}>
+        <img
+						alt=""
+						src="/leaf.png"
+						width="200"
+						height="200"
+						className="d-inline-block align-top"
+					/>
 				</Col>
-				<Col md={7}>
+				<Col md={8}>
 					<h5 className="title">Contact us</h5>
 					<Form>
 						<Form.Group controlId="formGroupPassword">

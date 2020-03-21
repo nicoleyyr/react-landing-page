@@ -9,7 +9,7 @@ const navbar = () => {
 	return (
 		<Navbar className="justify-content-between" fixed="top" bg="white">
 			<Container>
-				<Navbar.Brand href="#home" style={style}>
+				<Navbar.Brand href="#top" style={style}>
 					<img
 						alt=""
 						src="/logo.png"

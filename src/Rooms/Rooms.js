@@ -18,7 +18,7 @@ const rooms = () => {
     padding: "0 2rem !important"
 	};
 	return (
-		<Jumbotron style={style} fluid>
+		<Jumbotron id="rooms" style={style} fluid>
 			<Container className="mb-5 txtali-l">
 				<Row>
 					<Col md={{ span: 3, offset: 1 }}>
