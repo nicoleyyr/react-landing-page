@@ -2,14 +2,13 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
 
 const aboutUs = () => {
 	const style = {
 		textAlign: "left"
-  };
+	};
 	const styleCard = {
-		marginTop: "80px"
+		marginTop: "100px"
 	};
 	const styleText = {
 		fontSize: "12px"
@@ -27,24 +26,19 @@ const aboutUs = () => {
 					/>
 				</Col>
 				<Col md={{ span: 6 }}>
-					<Card border="white" style={styleCard}>
-						<Card.Body>
-							<Card.Title className="mb-2 text-muted">
-								About us
-							</Card.Title>
-							<Card.Text className="mb-2 text-muted" style={styleText}>
-								A wonder vacation on dream. The beach with the
-								breeze, enjoying the sunset in summer, and
-								bathing the star at midnight. What an amazing
-								thing when you wake up in the morning with the
-								view formed the sky, the mountains and the ocean
-								in front of you. You can totally relax yourself
-								with the bright and tidy room, the astonishing
-								scene, and our sweet service. Faraway from the
-								noist city right now.
-							</Card.Text>
-						</Card.Body>
-					</Card>
+					<div style={styleCard}>
+						<h5 className="mb-2 text-muted">About us</h5>
+						<p className="mb-2 text-muted" style={styleText}>
+							A wonder vacation on dream. The beach with the
+							breeze, enjoying the sunset in summer, and bathing
+							the star at midnight. What an amazing thing when you
+							wake up in the morning with the view formed the sky,
+							the mountains and the ocean in front of you. You can
+							totally relax yourself with the bright and tidy
+							room, the astonishing scene, and our sweet service.
+							Faraway from the noist city right now.
+						</p>
+					</div>
 				</Col>
 			</Row>
 		</Container>
