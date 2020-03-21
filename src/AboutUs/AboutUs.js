@@ -5,16 +5,10 @@ import Col from "react-bootstrap/Col";
 
 const aboutUs = () => {
 	const style = {
-		textAlign: "left"
-	};
-	const styleCard = {
 		marginTop: "100px"
 	};
-	const styleText = {
-		fontSize: "12px"
-	};
 	return (
-		<Container className="mb-5" style={style}>
+		<Container className="mb-5 txtali-l">
 			<Row>
 				<Col md={{ span: 6 }}>
 					<img
@@ -26,9 +20,9 @@ const aboutUs = () => {
 					/>
 				</Col>
 				<Col md={{ span: 6 }}>
-					<div style={styleCard}>
-						<h5 className="mb-2 text-muted">About us</h5>
-						<p className="mb-2 text-muted" style={styleText}>
+					<div style={style}>
+						<h5 className="title">About us</h5>
+						<p className="text">
 							A wonder vacation on dream. The beach with the
 							breeze, enjoying the sunset in summer, and bathing
 							the star at midnight. What an amazing thing when you
