@@ -7,7 +7,7 @@ const carousel = () => {
   };
   
 	return (
-		<Carousel interval="2000" indicators="false">
+		<Carousel className="mb-5" interval="2000" indicators="false">
 			<Carousel.Item style={style}>
 				<img
 					className="d-block w-100"

@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Navbar from "./Navbar/Navbar";
 import Carousel from "./Carousel/Carousel";
+import AboutUs from "./AboutUs/AboutUs";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -10,9 +11,10 @@ function App() {
 	return (
 		<div className="App">
 			<Container>
-				<Row md={{ span: 8, offset: 1 }}>
+				<Row>
 					<Navbar />
           <Carousel />
+          <AboutUs />
 				</Row>
 			</Container>
 		</div>
