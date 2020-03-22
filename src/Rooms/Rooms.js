@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -6,30 +6,67 @@ import Col from "react-bootstrap/Col";
 import { FixedSizeGrid as Grid } from "react-window";
 
 const Rooms = () => {
-	const [imgState] = useState(
-		{ src: "./mainpage.jpg", alt: "Main Room" },
-		{ src: "./singleRoom.jpeg", alt: "Single Room" },
-		{ src: "./DeluxeDoubleRoom.jpg", alt: "Deluxe Double Room" },
-		{ src: "./DeluxeSingleRoom.jpg", alt: "Deluxe Single Room" },
-		{ src: "./DeluxeTwinRoom.jpg", alt: "Deluxe Twin Room" },
-		{ src: "./DeluxeRoom.jpg", alt: "Deluxe Room" },
-		{ src: "./TwinRoom.jpg", alt: "Twin Room" },
+	const imgsArray = [
+		[
+			{ src: "./DeluxeDoubleRoom.jpg", alt: "Deluxe Double Room" },
+			{ src: "./DeluxeSingleRoom.jpg", alt: "Deluxe Single Room" },
+			{ src: "./DeluxeTwinRoom.jpg", alt: "Deluxe Twin Room" }
+		],
+		[
+			{ src: "./DoubleRoom.jpg", alt: "Double Room" },
+			{ src: "./singleRoom.jpeg", alt: "Single Room" },
+			{ src: "./TwinRoom.jpg", alt: "Twin Room" }
+		],
+		[
+			{ src: "./DeluxeDoubleRoom.jpg", alt: "Deluxe Double Room" },
+			{ src: "./DeluxeSingleRoom.jpg", alt: "Deluxe Single Room" },
+			{ src: "./DeluxeTwinRoom.jpg", alt: "Deluxe Twin Room" }
+		],
+		[
+			{ src: "./DoubleRoom.jpg", alt: "Double Room" },
+			{ src: "./singleRoom.jpeg", alt: "Single Room" },
+			{ src: "./TwinRoom.jpg", alt: "Twin Room" }
+		],
+		[
+			{ src: "./DeluxeDoubleRoom.jpg", alt: "Deluxe Double Room" },
+			{ src: "./DeluxeSingleRoom.jpg", alt: "Deluxe Single Room" },
+			{ src: "./DeluxeTwinRoom.jpg", alt: "Deluxe Twin Room" }
+		],
+		[
+			{ src: "./DoubleRoom.jpg", alt: "Double Room" },
+			{ src: "./singleRoom.jpeg", alt: "Single Room" },
+			{ src: "./TwinRoom.jpg", alt: "Twin Room" }
+		]
+	];
+	const Cell = ({ columnIndex, rowIndex, style }) => (
+		<div style={style}>
+			<img
+				src={imgsArray[rowIndex][columnIndex].src}
+				alt={imgsArray[rowIndex][columnIndex].alt}
+				width="200"
+				height="200"
+			/>
+			<p className="text">{imgsArray[rowIndex][columnIndex].alt}</p>
+		</div>
 	);
-	const Cell = () => (
-		<img src={imgState.src} alt={imgState.alt} width="200" height="200" />
-	);
-	const style = {
-		backgroundColor: "#E6E4DC"
+	const styleJumbontron = {
+		backgroundColor: "#E6E4DC",
+		height: "400px"
 	};
-	const style2 = {
+	const styleText = {
 		marginTop: "100px"
 	};
 	return (
-		<Jumbotron id="rooms" className="pt-0 pb-0" style={style} fluid>
+		<Jumbotron
+			id="rooms"
+			className="pt-0 pb-0"
+			style={styleJumbontron}
+			fluid
+		>
 			<Container className="txtali-l">
 				<Row>
 					<Col md={{ span: 3, offset: 1 }}>
-						<div style={style2}>
+						<div style={styleText}>
 							<h5 className="title">Rooms</h5>
 							<p className="text">
 								Nova Sky comprises 67 suites. Each one artfully
@@ -42,12 +79,13 @@ const Rooms = () => {
 					</Col>
 					<Col md={7}>
 						<Grid
-							rowCount={2}
+							className="Grid"
 							columnCount={3}
-							rowHeight={200}
 							columnWidth={200}
 							height={400}
-							width={900}
+							rowCount={6}
+							rowHeight={200}
+							width={600}
 						>
 							{Cell}
 						</Grid>
