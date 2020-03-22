@@ -13,3 +13,11 @@
 	color: #6c757d !important;
 	margin-bottom: 0.5rem !important;
 }
+.customBtn {
+	background-color: #e2d4a8 !important;
+	border-color: #e2d4a8 !important;
+}
+.customBtn:hover,
+.customBtn:active {
+	background-color: #b3a884 !important;
+}

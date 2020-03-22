@@ -10,7 +10,7 @@ const ContactUs = () => {
 		<Container id="contact-us" className="mb-5 txtali-l">
 			<Row>
 				<Col md={{ span: 4 }}>
-        <img
+					<img
 						alt=""
 						src="/leaf.png"
 						width="200"
@@ -42,7 +42,11 @@ const ContactUs = () => {
 								placeholder="Your message"
 							/>
 						</Form.Group>
-						<Button type="submit">Sent</Button>
+						<Col md={{ span: 2, offset: 10 }}>
+							<Button type="submit" size="sm" className="customBtn">
+								Send
+							</Button>
+						</Col>
 					</Form>
 				</Col>
 			</Row>
