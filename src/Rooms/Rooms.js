@@ -46,7 +46,9 @@ const Rooms = () => {
 				width="200"
 				height="200"
 			/>
-			<p className="text">{imgsArray[rowIndex][columnIndex].alt}</p>
+			<div style={styleCaption}>
+				<p>{imgsArray[rowIndex][columnIndex].alt}</p>
+			</div>
 		</div>
 	);
 	const styleJumbontron = {
@@ -55,6 +57,15 @@ const Rooms = () => {
 	};
 	const styleText = {
 		marginTop: "100px"
+	};
+	const styleCaption = {
+		position: "absolute",
+	    right: "15%",
+	    top: "45%",
+	    left: "15%",
+	    zIndex: "10",
+	    color: "#fff",
+	    textAlign: "center"
 	};
 	return (
 		<Jumbotron
