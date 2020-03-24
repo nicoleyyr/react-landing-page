@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { FixedSizeGrid as Grid } from "react-window";
+import styled from 'styled-components';
 
 const Rooms = () => {
 	const imgsArray = [
@@ -38,46 +39,71 @@ const Rooms = () => {
 			{ src: "./TwinRoom.jpg", alt: "Twin Room" }
 		]
 	];
-	const Cell = ({ columnIndex, rowIndex, style }) => (
-		<div style={style}>
-			<img
-				src={imgsArray[rowIndex][columnIndex].src}
-				alt={imgsArray[rowIndex][columnIndex].alt}
-				width="200"
-				height="200"
-			/>
-			<div style={styleCaption}>
-				<p>{imgsArray[rowIndex][columnIndex].alt}</p>
-			</div>
-		</div>
-	);
-	const styleJumbontron = {
+	const JumbotronDiv = styled(Jumbotron)`
 		backgroundColor: "#E6E4DC",
 		height: "400px"
-	};
-	const styleText = {
-		marginTop: "100px"
-	};
-	const styleCaption = {
-		position: "absolute",
-	    right: "15%",
-	    top: "45%",
-	    left: "15%",
-	    zIndex: "10",
-	    color: "#fff",
-	    textAlign: "center"
-	};
+	`;
+	const TextDiv = styled.div`
+		margin-top: 100px;
+	`;
+	const GridDiv = styled(Grid)`
+		@media screen and (max-width: 800px) {
+			width: 450px;
+			height: 300px;
+
+		}
+	`;
+	const CaptionDiv = styled.div`
+		position: absolute;
+		right: 15%;
+		top: 45%;
+		left: 15%;
+		z-zndex: 10;
+		color: #fff;
+		text-align: center;
+	`;
+	// const ImgGridDiv = styled.div`
+	// 	@media screen and (max-width: 800px) {
+	// 		width: 150px !important;
+	// 		height: 150px !important;
+	// 	}
+	// `;
+	// const ImgStyle = styled.img`
+	// 	width: 200px;
+	// 	height: 200px;
+	// 	@media screen and (max-width: 800px) {
+	// 		width: 150px;
+	// 		height: 150px;
+	// 	}
+	// `;
+	const ImgGridDiv = styled.div`
+	`;
+	const ImgStyle = styled.img`
+		width: 200px;
+		height: 200px;
+	`;
+
+const Cell = ({ columnIndex, rowIndex, style }) => (
+	<ImgGridDiv style={style}>
+		<ImgStyle
+			src={imgsArray[rowIndex][columnIndex].src}
+			alt={imgsArray[rowIndex][columnIndex].alt}
+		/>
+		<CaptionDiv>
+			<p>{imgsArray[rowIndex][columnIndex].alt}</p>
+		</CaptionDiv>
+	</ImgGridDiv>
+);
 	return (
-		<Jumbotron
+		<JumbotronDiv
 			id="rooms"
 			className="pt-0 pb-0"
-			style={styleJumbontron}
 			fluid
 		>
 			<Container className="txtali-l">
 				<Row>
 					<Col md={{ span: 3, offset: 1 }}>
-						<div style={styleText}>
+						<TextDiv>
 							<h5 className="title">Rooms</h5>
 							<p className="text">
 								Nova Sky comprises 67 suites. Each one artfully
@@ -86,24 +112,24 @@ const Rooms = () => {
 								definition to opulence and splendour, which
 								contemporary finishes and premium facilities.
 							</p>
-						</div>
+						</TextDiv>
 					</Col>
 					<Col md={7}>
-						<Grid
-							className="Grid"
-							columnCount={3}
-							columnWidth={200}
-							height={400}
-							rowCount={6}
-							rowHeight={200}
-							width={600}
-						>
-							{Cell}
-						</Grid>
+					<GridDiv
+						className="Grid"
+						columnCount={3}
+						columnWidth={200}
+						height={400}
+						rowCount={6}
+						rowHeight={200}
+						width={600}
+					>
+						{Cell}
+					</GridDiv>
 					</Col>
 				</Row>
 			</Container>
-		</Jumbotron>
+		</JumbotronDiv>
 	);
 };
 
