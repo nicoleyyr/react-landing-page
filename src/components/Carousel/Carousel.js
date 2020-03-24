@@ -1,14 +1,15 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import styled from 'styled-components';
 
 const carousel = () => {
-  const style = {
-		height: "450px"
-  };
+	const CarouselItemDiv = styled(Carousel.Item)`
+		height: 450px;
+	`;
   
 	return (
 		<Carousel id="top" className="mb-5" interval="2000" indicators="false">
-			<Carousel.Item style={style}>
+			<CarouselItemDiv>
 				<img
 					className="d-block w-100"
 					src="./mainpage.jpg"
@@ -18,8 +19,8 @@ const carousel = () => {
 				<Carousel.Caption>
 					<h3>First slide label</h3>
 				</Carousel.Caption>
-			</Carousel.Item>
-			<Carousel.Item style={style}>
+			</CarouselItemDiv>
+			<CarouselItemDiv>
 				<img
 					className="d-block w-100"
 					src="./mainpage.jpg"
@@ -30,8 +31,8 @@ const carousel = () => {
 				<Carousel.Caption>
 					<h3>Second slide label</h3>
 				</Carousel.Caption>
-			</Carousel.Item>
-			<Carousel.Item style={style}>
+			</CarouselItemDiv>
+			<CarouselItemDiv>
 				<img
 					className="d-block w-100"
 					src="./mainpage.jpg"
@@ -42,7 +43,7 @@ const carousel = () => {
 				<Carousel.Caption>
 					<h3>Third slide label</h3>
 				</Carousel.Caption>
-			</Carousel.Item>
+			</CarouselItemDiv>
 		</Carousel>
 	);
 };
