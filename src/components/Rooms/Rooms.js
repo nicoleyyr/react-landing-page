@@ -62,27 +62,20 @@ const Rooms = () => {
 		color: #fff;
 		text-align: center;
 	`;
-	// const ImgGridDiv = styled.div`
-	// 	@media screen and (max-width: 800px) {
-	// 		width: 150px !important;
-	// 		height: 150px !important;
-	// 	}
-	// `;
-	// const ImgStyle = styled.img`
-	// 	width: 200px;
-	// 	height: 200px;
-	// 	@media screen and (max-width: 800px) {
-	// 		width: 150px;
-	// 		height: 150px;
-	// 	}
-	// `;
 	const ImgGridDiv = styled.div`
+		@media screen and (max-width: 800px) {
+			width: 150px !important;
+			height: 150px !important;
+		}
 	`;
 	const ImgStyle = styled.img`
 		width: 200px;
 		height: 200px;
+		@media screen and (max-width: 800px) {
+			width: 150px;
+			height: 150px;
+		}
 	`;
-
 const Cell = ({ columnIndex, rowIndex, style }) => (
 	<ImgGridDiv style={style}>
 		<ImgStyle
