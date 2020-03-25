@@ -24,7 +24,7 @@ const ContactUs = () => {
 				<Col md={{ span: 4 }}>
 					<img
 						alt=""
-						src="/leaf.png"
+						src="./leaf.png"
 						width="200"
 						height="200"
 						className="d-inline-block align-top"
